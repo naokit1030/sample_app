@@ -71,4 +71,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
   
+  test "should be unvisible when unactivated" do
+    @other_user.toggle(:activated)
+    get users_path(@user)
+    follow_redirect!
+    assert_template '/'
+  end
+  
 end
