@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.0'
+gem 'pg', '1.1.4'
 gem 'bcrypt',         '3.1.13'
 gem 'faker',                   '2.1.2'
 gem 'will_paginate',           '3.1.8'
@@ -15,7 +16,6 @@ gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.4', require: false
 
 group :development, :test do
-  gem 'sqlite3', '1.4.1'
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -38,7 +38,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '1.1.4'
 end
 
 # Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
