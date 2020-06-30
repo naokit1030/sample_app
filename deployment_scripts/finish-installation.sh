@@ -8,7 +8,7 @@ DEPLOYMENT_TIME=$( date -u "+%Y/%m/%d %H:%M:%S" )
 echo "Deployment finished at: "$DEPLOYMENT_TIME" UTC" > /var/www/sample_app/deployment/public/deployment_time.txt
 
 # Arrange folder permissions
-chown -R apache:apache /var/www/sample_app/deployment
+chown -R nginx:nginx /var/www/sample_app/deployment
 chmod -R 775 /var/www/sample_app/deployment
 
-service apache restart
+service nginx restart

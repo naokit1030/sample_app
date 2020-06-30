@@ -5,8 +5,8 @@ files:
     destination: /var/www/sample_app/deployment
 permissions:
   - object: /var/www/sample_app/deployment
-    owner: apache
-    group: apache
+    owner: nginx
+    group: nginx
     pattern: "*"
     mode: 775
     type:
@@ -18,13 +18,13 @@ hooks:
       runas: root
   AfterInstall:
     - location: deployment_scripts/db-config.sh
-      runas: apache
+      runas: nginx
     - location: deployment_scripts/install-gems.sh
-      runas: apache
+      runas: nginx
     - location: deployment_scripts/compile-assets.sh
-      runas: apache
+      runas: nginx
     - location: deployment_scripts/run-db-migrations.sh
-      runas: apache
+      runas: nginx
 
   ApplicationStart:
     - location: deployment_scripts/finish-installation.sh
