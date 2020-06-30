@@ -66,4 +66,7 @@ Rails.application.configure do
   
   # Cloud9 への接続を許可する
   config.hosts.clear
+
+  # fix webpacker 
+  config.webpacker.check_yarn_integrity = false
 end
