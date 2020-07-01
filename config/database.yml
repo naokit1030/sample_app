@@ -17,7 +17,7 @@ test:
   database: myapp_test
 
 production:
-  port: 3306:3306
+  port: 5432:5432
   database: sample_app_production
   username: postgres
   password: password
